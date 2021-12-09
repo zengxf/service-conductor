@@ -1,0 +1,9 @@
+// 名称：服务编排
+rootProject.name = 'gradle-multi-module'
+
+// 模块：核心
+include "core"
+// 模块：扩展
+include "extends"
+// 模块：测试集
+include "test-set"

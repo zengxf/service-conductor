@@ -1,0 +1,28 @@
+allprojects {
+    apply plugin: 'java'
+}
+
+subprojects {
+    group = 'cn.zxf'
+    version = '1.0.0'
+    sourceCompatibility = 17
+
+    repositories {
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        mavenCentral()
+    }
+    dependencies {
+        // lombok
+        compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+        annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+        testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+        testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+        // test
+        testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.8.2'
+        testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.8.2'
+        testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.8.2' // 兼容 JUnit 4
+    }
+
+    // 启用 JUnit 5
+    test { useJUnitPlatform() }
+}
