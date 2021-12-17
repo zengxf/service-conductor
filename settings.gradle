@@ -1,9 +1,13 @@
 // 名称：服务编排
-rootProject.name = 'gradle-multi-module'
+rootProject.name = "service-conductor"
 
 // 模块：核心
 include "core"
 // 模块：扩展
-include "extends"
+include "extends:db"
+include "extends:mq"
+include "extends:open-api"
 // 模块：测试集
-include "test-set"
+include "test-set:alone"
+include "test-set:in-spring"
+include "test-set:jmh"

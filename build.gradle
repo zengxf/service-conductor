@@ -1,26 +1,51 @@
+plugins {
+//    id "io.freefair.lombok" version "6.3.0" apply false
+}
 allprojects {
-    apply plugin: 'java'
+    apply plugin: "java"
+//    apply plugin: "io.freefair.lombok"
+}
+
+ext {
+    junit5V = "5.8.2"
+    slf4jV = "1.7.32"
+    lombokV = "1.18.22"
+    springV = "5.3.14"
+    springBootV = "2.6.1"
+    hutoolV = "5.7.17"
+    commonsLang3V = "3.12.0"
+    commonsCollections4V = "4.4"
 }
 
 subprojects {
-    group = 'cn.zxf'
-    version = '1.0.0'
+    group = "cn.zxf"
+    version = "1.0.0"
     sourceCompatibility = 17
 
     repositories {
-        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public/" }
         mavenCentral()
     }
     dependencies {
         // lombok
-        compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
-        annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
-        testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
-        testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+        compileOnly group: "org.projectlombok", name: "lombok", version: "${lombokV}"
+        annotationProcessor group: "org.projectlombok", name: "lombok", version: "${lombokV}"
+        testCompileOnly group: "org.projectlombok", name: "lombok", version: "${lombokV}"
+        testAnnotationProcessor group: "org.projectlombok", name: "lombok", version: "${lombokV}"
+        // slf4j
+        implementation group: "org.slf4j", name: "slf4j-api", version: "${slf4jV}"
+        testImplementation group: "org.slf4j", name: "slf4j-simple", version: "${slf4jV}"
+        // commons utils
+        implementation group: "org.apache.commons", name: "commons-lang3", version: "${commonsLang3V}"
+        implementation group: "org.apache.commons", name: "commons-collections4", version: "${commonsCollections4V}"
+        // hutool-core
+        implementation group: "cn.hutool", name: "hutool-core", version: "${hutoolV}"
+        // jsr305
+        implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
         // test
-        testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.8.2'
-        testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.8.2'
-        testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.8.2' // 兼容 JUnit 4
+        testImplementation group: "org.junit.jupiter", name: "junit-jupiter-api", version: "${junit5V}"
+        testImplementation group: "org.junit.jupiter", name: "junit-jupiter-engine", version: "${junit5V}"
+        testImplementation group: "org.junit.vintage", name: "junit-vintage-engine", version: "${junit5V}" // 兼容 JUnit 4
     }
 
     // 启用 JUnit 5
