@@ -1,4 +1,4 @@
-package cn.zxf.conductor.core.utils;
+package cn.zxf.conductor.core.constant;
 
 /**
  * 编排相关的常量定义
@@ -7,10 +7,14 @@ package cn.zxf.conductor.core.utils;
  */
 public interface ConductorConstant {
 
-    /*** 默认任务超时时间 */
-    Integer DEF_TASK_TIMEOUT_MS = 60000;
-    /*** 默认 HTTP 连接超时时间 */
-    Integer DEF_API_CONNECT_TIMEOUT_MS = 30000;
+    /*** 默认任务超时时间(10s) */
+    Integer DEF_TASK_TIMEOUT_MS = 10000;
+    /*** 默认 HTTP 连接超时时间(3s) */
+    Integer DEF_API_CONNECT_TIMEOUT_MS = 3000;
+    /*** 默认流程优先级 */
+    Integer DEF_FLOW_PRIORITY = 0;
+    /*** 默认任务是否 join 执行 */
+    Boolean DEF_TASK_JOIN = false;
     /*** 空字符 */
     String EMPTY_STR = "";
     /*** 默认字符集 */

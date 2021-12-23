@@ -1,20 +1,27 @@
 plugins {
+    id "org.springframework.boot" version "2.6.1" apply false
+    id "io.spring.dependency-management" version "1.0.11.RELEASE" apply false
 //    id "io.freefair.lombok" version "6.3.0" apply false
 }
 allprojects {
     apply plugin: "java"
-//    apply plugin: "io.freefair.lombok"
+//    apply plugin: "io.freefair.lombok" // 可能报错
 }
 
 ext {
-    junit5V = "5.8.2"
-    slf4jV = "1.7.32"
     lombokV = "1.18.22"
+    slf4jV = "1.7.32"
+    // spring
     springV = "5.3.14"
     springBootV = "2.6.1"
+    // tool, util
     hutoolV = "5.7.17"
     commonsLang3V = "3.12.0"
     commonsCollections4V = "4.4"
+    commonsJexl3V = "3.2.1"
+    jsr305V = "3.0.2"
+    // unit test
+    junit5V = "5.8.2"
 }
 
 subprojects {
@@ -23,6 +30,7 @@ subprojects {
     sourceCompatibility = 17
 
     repositories {
+        mavenLocal()
         maven { url "https://maven.aliyun.com/nexus/content/groups/public/" }
         mavenCentral()
     }
@@ -41,7 +49,7 @@ subprojects {
         // hutool-core
         implementation group: "cn.hutool", name: "hutool-core", version: "${hutoolV}"
         // jsr305
-        implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
+        implementation group: "com.google.code.findbugs", name: "jsr305", version: "${jsr305V}"
         // test
         testImplementation group: "org.junit.jupiter", name: "junit-jupiter-api", version: "${junit5V}"
         testImplementation group: "org.junit.jupiter", name: "junit-jupiter-engine", version: "${junit5V}"

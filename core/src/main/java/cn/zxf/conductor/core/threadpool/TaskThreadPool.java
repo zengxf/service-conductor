@@ -6,7 +6,7 @@ import cn.zxf.conductor.core.entity.TaskExecuteResult;
 import cn.zxf.conductor.core.TaskExecutor;
 import cn.zxf.conductor.core.config.ThreadPoolConfig;
 import cn.zxf.conductor.core.utils.AssertUtils;
-import cn.zxf.conductor.core.utils.ConductorConstant;
+import cn.zxf.conductor.core.constant.ConductorConstant;
 import cn.zxf.conductor.core.utils.SpringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

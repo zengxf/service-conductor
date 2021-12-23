@@ -4,7 +4,7 @@ import cn.zxf.conductor.core.entity.Flow;
 import cn.zxf.conductor.core.entity.FlowExecuteResult;
 import cn.zxf.conductor.core.FlowExecutor;
 import cn.zxf.conductor.core.config.ThreadPoolConfig;
-import cn.zxf.conductor.core.utils.ConductorConstant;
+import cn.zxf.conductor.core.constant.ConductorConstant;
 import cn.zxf.conductor.core.utils.SpringUtils;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -101,7 +101,7 @@ public class FlowThreadPool {
                     .setEngine(engine)
                     .setFlow(flow)
                     .setTimestamp(System.currentTimeMillis())
-                    .setPriority(flow.getPriority());
+                    .setPriority(flow.priority());
         }
 
         /*** 对编排流程进行优先级排序，一段时间窗口内的任务 priority 越小（优先级则越高），越早执行 */

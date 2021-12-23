@@ -1,6 +1,6 @@
 package cn.zxf.conductor.core.config;
 
-import cn.zxf.conductor.core.utils.ConductorConstant;
+import cn.zxf.conductor.core.constant.ConductorConstant;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import org.apache.commons.lang3.StringUtils;
