@@ -10,10 +10,10 @@ import org.junit.jupiter.api.Test;
  */
 @Slf4j
 @DisplayName("测试断言")
-class TestAssertUtils {
+class AssertUtilsTest {
 
     @Test
-    @DisplayName("断言空对象")
+    @DisplayName("测试断言空对象")
     public void testObjNull() {
         Object obj = null;
         try {

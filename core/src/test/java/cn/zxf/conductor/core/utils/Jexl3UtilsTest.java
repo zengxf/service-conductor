@@ -13,7 +13,7 @@ import java.util.Map;
  */
 @Slf4j
 @DisplayName("表达式解析测试")
-public class TestJexl3Utils extends Jexl3Utils {
+public class Jexl3UtilsTest extends Jexl3Utils {
 
     @Test
     @DisplayName("测试数组越界")

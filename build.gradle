@@ -37,7 +37,8 @@ subprojects {
         // test
         testImplementation group: "org.junit.jupiter", name: "junit-jupiter-api", version: "${junit5V}"
         testImplementation group: "org.junit.jupiter", name: "junit-jupiter-engine", version: "${junit5V}"
-        testImplementation group: "org.junit.vintage", name: "junit-vintage-engine", version: "${junit5V}" // 兼容 JUnit 4
+        // 兼容 JUnit 4，但未必要了
+        // testImplementation group: "org.junit.vintage", name: "junit-vintage-engine", version: "${junit5V}"
     }
 
     // 启用 JUnit 5

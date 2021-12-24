@@ -1,3 +1,6 @@
 dependencies {
-//    implementation project(":core")
+    // hutool-crypto
+    implementation group: "cn.hutool", name: "hutool-crypto", version: "${huToolV}"
+    // conductor:core
+    implementation project(":core")
 }

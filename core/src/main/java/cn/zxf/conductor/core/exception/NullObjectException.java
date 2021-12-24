@@ -7,8 +7,6 @@ package cn.zxf.conductor.core.exception;
  */
 public class NullObjectException extends ConductorException {
 
-    private static final long serialVersionUID = 1L;
-
     public NullObjectException(String message) {
         super(message);
     }

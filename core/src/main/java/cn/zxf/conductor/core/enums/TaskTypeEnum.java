@@ -1,9 +1,6 @@
 package cn.zxf.conductor.core.enums;
 
-import cn.hutool.core.util.StrUtil;
 import lombok.AllArgsConstructor;
-
-import java.util.stream.Stream;
 
 /**
  * 任务类型
@@ -24,12 +21,5 @@ public enum TaskTypeEnum {
 
     public final Integer code;
     public final String desc;
-
-    public static TaskTypeEnum of(Integer code) {
-        return Stream.of(TaskTypeEnum.values())
-                .filter(type -> type.code.equals(code))
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException(StrUtil.format("未知的任务类型！type: [{}]", code)));
-    }
 
 }

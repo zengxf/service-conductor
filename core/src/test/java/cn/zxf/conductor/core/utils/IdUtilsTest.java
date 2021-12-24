@@ -10,10 +10,10 @@ import org.junit.jupiter.api.Test;
  */
 @Slf4j
 @DisplayName("测试 ID 帮助类")
-public class TestIdUtils {
+public class IdUtilsTest {
 
     @Test
-    @DisplayName("全局 ID")
+    @DisplayName("测试全局 ID")
     public void test() {
         String id = IdUtils.genGlobalId();
         log.info("GlobalId: [{}]", id);
