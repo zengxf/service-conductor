@@ -1,5 +1,6 @@
 dependencies {
     // spring
+    implementation group: "org.springframework", name: "spring-core", version: "${springV}"
     implementation group: "org.springframework", name: "spring-context", version: "${springV}"
     // spring-boot
     implementation group: "org.springframework.boot", name: "spring-boot", version: "${springBootV}"
